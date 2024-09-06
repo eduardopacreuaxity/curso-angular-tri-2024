@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title">
+    <mat-error *ngIf="form.controls['title']?.invalid">{{errorMessage('title')}}</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Views</mat-label>
+    <input matInput formControlName="views">
+    <mat-error *ngIf="form.controls['views']?.invalid">{{errorMessage('views')}}</mat-error>
+  </mat-form-field>
+</form>
+<button mat-raised-button [disabled]="form.invalid" (click)="addNewItem()">ADD</button>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of list" class="col-12 col-md-6 col-xl-3 show-border">
+      {{item.id}}
+      <input matInput [(ngModel)]="item.title">
+      <input matInput [(ngModel)]="item.views">
+      <button mat-raised-button [disabled]="!item.title || !item.views" (click)="updateItem(item)">UPDATE</button>
+      <button mat-raised-button [disabled]="!item.title || !item.views"(click)="deleteItem(item.id)">DELETE</button>
+    </div>
+  </div>
+</div>
