@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "user": "eduardo.pacreu@axity.com",
+      "password": "qweASD123"
+    },
+    {
+      "id": "2",
+      "user": "pepe.test@axity.com",
+      "password": "qweASD123"
+    }
+  ],
+  "libros": [
+    {
+      "id": "1",
+      "title": "The code",
+      "price": "125"
+    },
+    {
+      "id": "2",
+      "title": "The code",
+      "price": "125"
+    }
+  ]
+}
